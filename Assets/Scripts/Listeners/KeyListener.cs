@@ -20,7 +20,7 @@ public abstract class KeyListener : MonoBehaviour {
 	//RegistersCurrentKeyHits
 	public abstract void update();
 
-	public abstract Action getAction ();
+	public abstract Action getAction();
 
 	public Action getRandom(){
 		return null;

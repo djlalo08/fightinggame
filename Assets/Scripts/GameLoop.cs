@@ -3,80 +3,109 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameLoop : MonoBehaviour {
+public class GameLoop:MonoBehaviour {
 
-	public static GameLoop instance = null;
+    //readonly int secsTosamples = 44100;
 
-	public int count;
+    public Beater beater;
+    public Beater2 beater2;
 
-	public Text winText;
+    public static GameLoop instance = null;
 
-	public Player player1;
-	public Player player2;
+    public int count;
 
-	public KeyListener player1Listener;
-	public KeyListener player2Listener;
+    public int samplesTranspired;
+    private int lastsampletime;
 
-	static List<GameEvent> eventList = new List<GameEvent>();
+    public Text text1;
+    public Text text2;
 
-	// Use this for initialization
-	void Awake () {
-		if (instance == null){
-			instance = this;
-		}
-		else if (instance != this){
-			Destroy(gameObject);
-		}
+    public Player player1;
+    public Player player2;
 
-		winText.text = "";
+    public KeyListener player1Listener;
+    public KeyListener player2Listener;
 
-		player1Listener = (player1.isEnemy)? (KeyListener)gameObject.AddComponent(typeof(AIListener)): (KeyListener)gameObject.AddComponent(typeof(PlayerListener));
-		player2Listener = (player2.isEnemy)? (KeyListener)gameObject.AddComponent(typeof(AIListener)): (KeyListener)gameObject.AddComponent(typeof(PlayerListener));
-		player1.tieListener (player1Listener);
-		player2.tieListener (player2Listener);
-	}
+    static List<GameEvent> eventList = new List<GameEvent>();
 
-	// Update is called once per frame
-	void FixedUpdate () {
-		count++;
-		respondToKeys();
-		playerUpdates();
-		evaluatePending();
-	}
+    private AudioSource song;
+    public int offset;
+    public int songtimeSamples;
+    public int beatSampleSize;
+    public int epsilon;
+    public int diff;
 
-	//generates heart points depending on the heart-beat and pressure and moves being done
-	void playerUpdates(){
-		player1.update();
-		player2.update();
-		//for multiplayer consider alternating this order each update
-	}
+    // Use this for initialization
+    void Awake() {
+        if(instance == null) {
+            instance = this;
+        } else if(instance != this) {
+            Destroy(gameObject);
+        }
 
-	//just set anything relevant to any keys presses. Activate any attack or move or anything like that
-	public void respondToKeys(){
-		player1Listener.update();
-		player2Listener.update();
-	}
+        song = GetComponent<AudioSource>();
 
-	public static void addToList(GameEvent e){
-		eventList.Add(e);
-	}
+        text1.text = "";
 
-	public static void endEvent(GameEvent e){
-		eventList.Remove (e);
-		e.agent.performing = null;
-	}
+        player1Listener = (player1.isEnemy) ? (KeyListener)gameObject.AddComponent(typeof(AIListener)) : (KeyListener)gameObject.AddComponent(typeof(PlayerListener));
+        player2Listener = (player2.isEnemy) ? (KeyListener)gameObject.AddComponent(typeof(AIListener)) : (KeyListener)gameObject.AddComponent(typeof(PlayerListener));
+        player1.tieListener(player1Listener);
+        player2.tieListener(player2Listener);
+    }
 
-	//check whether You got hit or not or whatever
-	public void evaluatePending(){
-		for (int i = eventList.Count-1; i>=0; i--){
-			eventList[i].update();
-		}
-	}
+    // Update is called once per frame
+    void Update() {
+        count++;
+        respondToKeys();
+        playerUpdates();
 
-	public static void knockout(string name){
-		GameLoop.instance.winText.text = name + " has been knocked out!";
-		Destroy(GameLoop.instance.gameObject);
-		//win or lose depending on who got knocked out
-	}
+        songtimeSamples = song.timeSamples+offset;
+
+        if(isBeat(songtimeSamples, beatSampleSize, epsilon)) { text1.text = "beat1!"; beater.Beat(); beater2.Beat(); } else text1.text = "";
+
+        evaluatePending();
+        samplesTranspired = songtimeSamples - lastsampletime;
+        lastsampletime = songtimeSamples;
+    }
+
+    bool isBeat(int big, int breakSize, int epsilon) {
+        diff = big % breakSize;
+        return Mathf.Abs(diff) < epsilon;
+    }
+
+    //generates heart points depending on the heart-beat and pressure and moves being done
+    void playerUpdates() {
+        player1.update();
+        player2.update();
+        //for multiplayer consider alternating this order each update
+    }
+
+    //just set anything relevant to any keys presses. Activate any attack or move or anything like that
+    public void respondToKeys() {
+        player1Listener.update();
+        player2Listener.update();
+    }
+
+    public static void addToList(GameEvent e) {
+        eventList.Add(e);
+    }
+
+    public static void endEvent(GameEvent e) {
+        eventList.Remove(e);
+        e.agent.performing = null;
+    }
+
+    //check whether You got hit or not or whatever
+    public void evaluatePending() {
+        for(int i = eventList.Count-1; i>=0; i--) {
+            eventList[i].update();
+        }
+    }
+
+    public static void knockout(string name) {
+        GameLoop.instance.text1.text = name + " has been knocked out!";
+        Destroy(GameLoop.instance.gameObject);
+        //win or lose depending on who got knocked out
+    }
 
 }

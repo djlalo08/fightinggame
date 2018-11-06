@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -63,11 +64,11 @@ public class Player : MonoBehaviour {
 	}
 
 	public void update(){
-		addHeart();
+		//addHeart();
 		//you can always do any action, and it will just bring your heart points down to 1 until next update cycle
 		//except some attacks have a minimum-points cutoff
 		//turn regen off during an attack/motion
-		pendingAction();
+		//pendingAction();
 
 	}
 
@@ -126,7 +127,7 @@ public class Player : MonoBehaviour {
 				s += c;
 			}
 
-			if (s.Length > 0){
+            if (s.Length > 0){
 				print("Keystring [" + s + "] has been pressed");
 			}
 

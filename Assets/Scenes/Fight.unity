@@ -2050,8 +2050,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ef5efc32ab24d2fb7fc07f4d48c68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BPM: 200
   beater3: {fileID: 1890955776}
   startTime: 1
+  offset: 0.0486
   player1: {fileID: 1241264031}
   player2: {fileID: 1275531314}
   player1Listener: {fileID: 0}
@@ -2065,7 +2067,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2061389d344ff4d8b9b4457905b6f329, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5cffb8529d0c14047b033e5a4a342ce1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

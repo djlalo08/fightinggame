@@ -5,8 +5,11 @@ using UnityEngine.Audio;
 
 public class Gameloop2 : MonoBehaviour {
 
+    public float BPM;
+
     public Beater3 beater3;
     public float startTime;
+    public float offset;//starts music a little later/earlier
 
     public Player player1;
     public Player player2;
@@ -23,8 +26,8 @@ public class Gameloop2 : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GetComponent<AudioSource>().PlayDelayed(startTime);
-        InvokeRepeating("Beat", startTime, 3f/8f);
+        GetComponent<AudioSource>().PlayDelayed(startTime+offset);
+        InvokeRepeating("Beat", startTime, 60f/BPM);
 	}
 	
 	// Update is called once per frame

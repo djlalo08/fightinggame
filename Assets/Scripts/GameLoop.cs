@@ -10,6 +10,8 @@ public class GameLoop:MonoBehaviour {
 
     public Text winText;
     public Image winPanel;
+    public Image flash;
+    private int flashCount;
 
     public Beater beater;
     public Beater heart1;
@@ -36,6 +38,8 @@ public class GameLoop:MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        flashCount = 0;
+
         GetComponent<AudioSource>().PlayDelayed(startTime+offset);
         InvokeRepeating("Beat", startTime, 60f/BPM);
     }
@@ -44,12 +48,17 @@ public class GameLoop:MonoBehaviour {
     void Update() {
         p1queue += p1Listener.GetInput();
         p2queue += p2Listener.GetInput();
+
+        if (flashCount >= 3) flash.GetComponent<Image>().enabled = false;
+        flashCount++;
     }
 
     void Beat() {
         beater.Beat();
         heart1.Beat();
         heart2.Beat();
+        flash.GetComponent<Image>().enabled = true;
+        flashCount = 0;
 
         p1.Tire();
         p2.Tire();
@@ -61,13 +70,18 @@ public class GameLoop:MonoBehaviour {
         p2queue = "";
         p1.heartPoints = Mathf.Min(p1.heartMax, p1.heartPoints);
         p2.heartPoints = Mathf.Min(p2.heartMax, p2.heartPoints);
-        if (p1.heartPoints <= 0 ) Knockout (p1.enemy.pName);
-        if (p2.heartPoints <= 0) Knockout (p2.enemy.pName);
+        if (p1.heartPoints <= 0 ) Knockout (p1);
+        if (p2.heartPoints <= 0) Knockout (p2);
+
+        if (p1Listener is AIListener) ((AIListener)p1Listener).hasTyped = false;
+        if (p2Listener is AIListener) ((AIListener)p2Listener).hasTyped = false;
     }
-    
-    public void Knockout(string name) {
-        winText.text = name + " wins!!";
+
+    public void Knockout(Player player) {
+        winText.text = player.enemy.pName + " wins!!";
         winPanel.GetComponent<Image>().enabled = true;
+        heart1.GetComponent<Image>().enabled = false;
+        heart2.GetComponent<Image>().enabled = false;
         beater.GetComponent<Image>().enabled = false;
         CancelInvoke("Beat");
     }

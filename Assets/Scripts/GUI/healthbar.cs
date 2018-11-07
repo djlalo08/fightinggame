@@ -17,6 +17,6 @@ public class healthbar : MonoBehaviour {
 	// Update is called once per frame
     void Update () {
         slider.value = player.heartPoints;
-        heart.size = 1f/(player.heartPoints/180f);
+        heart.size = 1f/(player.heartPoints/220f);
 	}
 }

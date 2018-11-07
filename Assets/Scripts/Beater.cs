@@ -19,6 +19,7 @@ public class Beater : MonoBehaviour {
 	void Start () {
         //c = new Color(106f/255f, 208f/255f, 209f/255f, 173f/255f);
         trans = GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
@@ -28,10 +29,9 @@ public class Beater : MonoBehaviour {
                 trans.localScale = size * 2f * trans.localScale;
                 frame = 3;
                 break;
-            case 2:
-                //trans.localScale = 1.33333f * trans.localScale;
+            //case 2:
                 //frame = 3;
-                break;
+                //break;
             case 3:
                 frame = 4;
                 break;

@@ -66,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1670819504687192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.51, y: -2.6, z: 0}
-  m_LocalScale: {x: 1.9106, y: 1.9106, z: 1.9106}
+  m_LocalPosition: {x: -0.9, y: -2.6, z: 0.3}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4013971333416678}
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ Animator:
   m_GameObject: {fileID: 1670819504687192}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57935c614909842a19089210d5accd1c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -102,12 +102,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4b4ca723b9e4a238d63e645943eb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weight: 0
+  attacks: []
+  moves: []
+  nothing: {fileID: 0}
   RATE: 5
   STRENGTH: 10
-  MAX: 10
+  MAX: 200
   STAMINA: 200
-  pointMax: 0
-  heartPoints: 0
 --- !u!114 &114629120171601166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,17 +122,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pName: Lalo
+  t: {fileID: 0}
+  keys:
+  - 
+  - A
+  - Semicolon
+  - Q
+  vals:
+  - {fileID: 114557733763874598, guid: 3c796712dd30d4fb8b552abeb0a7ca32, type: 2}
+  - {fileID: 114106236411218480, guid: 29859fd7445cb4835a274bb51f604c78, type: 2}
+  - {fileID: 114231175112421684, guid: 8ec3f3227f4544d7aab11c5f500c600a, type: 2}
+  - {fileID: 114386331815084306, guid: 913ea5a8278444be480ed80973c273b1, type: 2}
   isEnemy: 0
   enemy: {fileID: 0}
   rightArm: {fileID: 114575160437802512, guid: 18b3e133d3394462ba8b9d0a05da3681, type: 2}
   leftArm: {fileID: 114575160437802512, guid: 18b3e133d3394462ba8b9d0a05da3681, type: 2}
   leftLeg: {fileID: 114054017729463750, guid: 378d15ade4c8943b3bd9b4cdb39a77b2, type: 2}
   rightLeg: {fileID: 114054017729463750, guid: 378d15ade4c8943b3bd9b4cdb39a77b2, type: 2}
-  limbs: []
   heart: {fileID: 114278449887452308}
+  heartMax: 0
   heartPoints: 0
   position: 0
-  listener: {fileID: 0}
   updateCount: 0
 --- !u!212 &212517909041574782
 SpriteRenderer:

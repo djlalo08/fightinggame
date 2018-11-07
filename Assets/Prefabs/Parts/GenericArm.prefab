@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabe9a74049154ef59baef899f625a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weight: 5
   attacks:
   - {fileID: 114386331815084306, guid: 913ea5a8278444be480ed80973c273b1, type: 2}
   - {fileID: 114308525158726520, guid: 93ca918e199e34b93a35440f38c2c213, type: 2}

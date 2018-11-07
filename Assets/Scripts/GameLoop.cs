@@ -35,31 +35,25 @@ public class GameLoop:MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        p1queue = p1Listener.update();
-        p2queue = p2Listener.update();
+        p1queue += p1Listener.GetInput();
+        p2queue += p2Listener.GetInput();
     }
 
     void Beat() {
         beater3.Beat();
+        p1.Tire();
+        p2.Tire();
         p1.Regen();
         p2.Regen();
         p1.Parse(p1queue).Act();
         p2.Parse(p2queue).Act();
         p1queue = "";
         p2queue = "";
+        if (p1.heartMax <= 0) Knockout ("p1");
+        if (p2.heartMax <= 0) Knockout("p2");
     }
-
     
-
-    public static void EndEvent(GameEvent e) {
-        GameEvent b =e;
-    }
-
     public static void Knockout(string name) {
-        string b = name;
-    }
-
-    public static void AddToList(GameEvent e) {
-        GameEvent b = e;
+        //TODO this
     }
 }

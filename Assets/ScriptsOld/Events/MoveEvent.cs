@@ -19,7 +19,7 @@ public class MoveEvent: GameEvent{
 			GameLoop.EndEvent (this);
 		}
 
-		agent.Fatigue(move.cost(frame));
+		agent.Fatigue(move.evalCost(frame));
 		agent.position += (double)dir/(double)move.movement(frame);
 
 		if (agent.heartPoints <= 0) agent.heartPoints = 1;
@@ -28,7 +28,7 @@ public class MoveEvent: GameEvent{
 	}
 
 	public override int cost (){
-		return move.cost(frame);
+		return move.evalCost(frame);
 	}
 
 }

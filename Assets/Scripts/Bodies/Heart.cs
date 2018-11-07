@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class Heart : BodyPart {
 
-	public int RATE; //heart speed
+	public int RATE; //beats until next regen
 	public int STRENGTH;//points per batch
-	public double MAX;
-	public double STAMINA;
-
-	public double pointMax;
-	public double heartPoints;
-
+	public float MAX;
+    public float STAMINA;
 }

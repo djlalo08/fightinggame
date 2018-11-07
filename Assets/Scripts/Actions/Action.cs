@@ -8,10 +8,8 @@ public abstract class Action : MonoBehaviour {
     public float cost;
 
     public void Act(){
-        if (cost < actor.heartPoints){
-            actor.Fatigue(cost);
-            Effect();
-        }
+        actor.Fatigue(cost);
+        Effect();
     }
 
     protected abstract void Effect();

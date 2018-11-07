@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class GameLoop:MonoBehaviour {
 
     public float BPM;
 
-    public Beater3 beater3;
+    public Text winText;
+    public Image winPanel;
+
+    public Beater beater;
+    public Beater heart1;
+    public Beater heart2;
+
     public float startTime;
     public float offset;//starts music a little later/earlier
 
@@ -40,7 +47,10 @@ public class GameLoop:MonoBehaviour {
     }
 
     void Beat() {
-        beater3.Beat();
+        beater.Beat();
+        heart1.Beat();
+        heart2.Beat();
+
         p1.Tire();
         p2.Tire();
         p1.Regen();
@@ -49,11 +59,16 @@ public class GameLoop:MonoBehaviour {
         p2.Parse(p2queue).Act();
         p1queue = "";
         p2queue = "";
-        if (p1.heartMax <= 0) Knockout ("p1");
-        if (p2.heartMax <= 0) Knockout("p2");
+        p1.heartPoints = Mathf.Min(p1.heartMax, p1.heartPoints);
+        p2.heartPoints = Mathf.Min(p2.heartMax, p2.heartPoints);
+        if (p1.heartPoints <= 0 ) Knockout (p1.enemy.pName);
+        if (p2.heartPoints <= 0) Knockout (p2.enemy.pName);
     }
     
-    public static void Knockout(string name) {
-        //TODO this
+    public void Knockout(string name) {
+        winText.text = name + " wins!!";
+        winPanel.GetComponent<Image>().enabled = true;
+        beater.GetComponent<Image>().enabled = false;
+        CancelInvoke("Beat");
     }
 }

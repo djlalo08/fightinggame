@@ -25,17 +25,19 @@ public class Player : MonoBehaviour {
     public BodyPart rightLeg;
     public Heart heart;
 
-    public double heartMax;
-    public double heartPoints; 
+    public float heartMax;
+    public float heartPoints; 
 
-    public double position;
+    public float position;
 
 	bool regen;
-	public int updateCount = 0;
+	public int updateCount;
 
 	// Use this for initialization
 	void Awake() {
-		
+
+        updateCount = 0;
+
         heartMax = heart.MAX;
         heartPoints = heartMax;
 		regen = true;
@@ -64,15 +66,13 @@ public class Player : MonoBehaviour {
 	}
 
 	//take damage from a hit
-    public void Hit(double strength, Player target){
+    public void Hit(float strength){
 		//TODO: factor in whether this player is facing the right dir. If sides, do bonus damage, if facing backwards do extra critical damage
-        target.heartMax -= strength;
-		if (heartPoints <= 0){
-			//GameLoop.Knockout(pName);
-		}
+        //TODO: factor in armor and blocking, etc
+        heartMax -= strength;
 	}
 
-    public void Fatigue(double weaken){
+    public void Fatigue(float weaken){
 		heartPoints -= weaken;
 		if (heartPoints <= 0) {heartPoints = 1;}
 	}

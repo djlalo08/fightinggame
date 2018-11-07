@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Attack : Action {
 
-    override protected void Effect(){
+    public int strength;
 
+    override protected void Effect(){
+        Player target = actor.enemy;
+        target.Hit(strength);
     }
 }

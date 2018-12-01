@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     public List<Action> vals = new List<Action>();
 
 	public bool isEnemy;
+    public bool isEnabled;
 
 	public Player enemy;
     KeyListener listener;

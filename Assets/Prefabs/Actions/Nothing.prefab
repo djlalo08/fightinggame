@@ -51,5 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9518b2875f124586ae7d2a3d98f95e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Actor: {fileID: 0}
+  actor: {fileID: 0}
   cost: 0
+  actionName: nothing

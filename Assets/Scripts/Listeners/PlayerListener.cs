@@ -17,6 +17,7 @@ public class PlayerListener : KeyListener {
             if(Input.GetKeyDown(kcode))
                 str += kcode;
         }
+        if (!isEnabled) return "";
         return str;
     }
 

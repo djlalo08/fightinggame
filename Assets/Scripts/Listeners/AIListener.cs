@@ -10,7 +10,7 @@ public class AIListener : KeyListener{
 	//RegistersCurrentKeyHits
     override public string GetInput(){
         if (!hasTyped){
-            int x = (int)Mathf.Floor(Random.Range(1,5));
+            int x = (int)Mathf.Floor(Random.Range(1,7));
             string str = "";
             switch (x){
                 case 1:
@@ -23,10 +23,17 @@ public class AIListener : KeyListener{
                     str = "Q";
                     break;
                 case 4:
+                    str = "AA";
+                    break;
+                case 5:
+                    str = "SemicolonSemicolon";
+                    break;
+                case 6:
                     str = "";
                     break;
             }
             hasTyped = true;
+            if (!isEnabled) return "";
             return str;
         }
         return "";

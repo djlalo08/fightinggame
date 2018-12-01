@@ -34,6 +34,8 @@ public class GameLoop:MonoBehaviour {
         p2Listener = (p2.isEnemy) ? (KeyListener)gameObject.AddComponent(typeof(AIListener)) : (KeyListener)gameObject.AddComponent(typeof(PlayerListener));
         p1.TieListener(p1Listener);
         p2.TieListener(p2Listener);
+        p1Listener.isEnabled = p1.isEnabled;
+        p2Listener.isEnabled = p2.isEnabled;
     }
 
     // Use this for initialization
@@ -57,7 +59,7 @@ public class GameLoop:MonoBehaviour {
         beater.Beat();
         heart1.Beat();
         heart2.Beat();
-        flash.GetComponent<Image>().enabled = true;
+        flash.GetComponent<Image>().enabled = false;
         flashCount = 0;
 
         p1.Tire();

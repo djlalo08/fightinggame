@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   cost: 3
-  dir: -4
+  actionName: left
+  dir: -1

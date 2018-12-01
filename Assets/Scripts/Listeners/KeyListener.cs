@@ -9,6 +9,8 @@ public abstract class KeyListener : MonoBehaviour {
 
 	public Player player;
 
+    public bool isEnabled;
+
 	protected string lastPressed;
 
 	void Start(){

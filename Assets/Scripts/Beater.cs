@@ -11,7 +11,7 @@ public class Beater : MonoBehaviour {
     private int beatCount = 1;
 
     private int frame;//0 steady, 1 start grow, 2 finish grow, -1 start shrink, -2 finish shrink
-    public float size;
+    private float size = 1;
 
     public Color c;
 

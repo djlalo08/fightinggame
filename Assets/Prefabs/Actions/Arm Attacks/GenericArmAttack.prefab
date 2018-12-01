@@ -54,7 +54,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   cost: 15
+  actionName: punch
   strength: 15
+  range: 0.88
+  offset: 2.55
+  missName: misspunch
 --- !u!212 &212183179197862354
 SpriteRenderer:
   m_ObjectHideFlags: 1

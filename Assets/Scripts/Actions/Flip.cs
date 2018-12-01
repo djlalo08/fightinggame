@@ -6,7 +6,7 @@ public class Flip : Action {
 
     protected override void Effect(){
         Transform t = actor.GetComponent<Transform>();
-        actor.facingLeft = !actor.facingLeft;
+        actor.facingRight = !actor.facingRight;
         t.eulerAngles = t.eulerAngles+ new Vector3(0,180f,0);
     }
 

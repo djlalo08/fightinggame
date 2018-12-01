@@ -13,9 +13,15 @@ public class Attack : Action {
         Player target = actor.enemy;
         float targPos = target.GetComponent<Transform>().position.x;
         float actorPos = actor.GetComponent<Transform>().position.x;
-        if (Mathf.Abs(actorPos-targPos+offset) < range){
+        float trueOffset = actor.facingRight? offset: -offset;
+        if (Mathf.Abs(actorPos-targPos+trueOffset) < range){
             target.Hit(strength);
-            actor.GetComponent<Animator>().SetTrigger(actionName);
+            if (actor.facingRight) {
+                actor.GetComponent<Animator>().SetTrigger(actionName);
+            }
+            else {
+                actor.GetComponent<Animator>().SetTrigger(invName);
+            }
         }
         else{
             actor.GetComponent<Animator>().SetTrigger(missName);

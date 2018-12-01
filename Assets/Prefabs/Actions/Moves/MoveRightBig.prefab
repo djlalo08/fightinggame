@@ -54,4 +54,5 @@ MonoBehaviour:
   actor: {fileID: 0}
   cost: 3
   actionName: bigright
+  invName: bigleft
   dir: 3

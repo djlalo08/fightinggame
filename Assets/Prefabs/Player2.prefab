@@ -351,6 +351,7 @@ MonoBehaviour:
   - AA
   - SemicolonSemicolon
   - Q
+  - B
   vals:
   - {fileID: 114130855189343596}
   - {fileID: 114280748104554738}
@@ -358,6 +359,7 @@ MonoBehaviour:
   - {fileID: 114574566028511974}
   - {fileID: 114647578825142154}
   - {fileID: 114586110184186722}
+  - {fileID: 114891578412570148}
   isEnemy: 1
   isEnabled: 1
   enemy: {fileID: 0}
@@ -370,7 +372,7 @@ MonoBehaviour:
   heartPoints: 0
   position: 0
   updateCount: 0
-  facingLeft: 0
+  facingRight: 0
 --- !u!114 &114574566028511974
 MonoBehaviour:
   m_ObjectHideFlags: 1

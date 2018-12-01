@@ -34,11 +34,11 @@ public class Player : MonoBehaviour {
 	bool regen;
 	public int updateCount;
 
-    public bool facingLeft;
+    public bool facingRight;
 
 	// Use this for initialization
 	void Awake() {
-        facingLeft = true;
+        facingRight = true;
         updateCount = 0;
 
         heartMax = heart.MAX;
@@ -73,6 +73,7 @@ public class Player : MonoBehaviour {
 		//TODO: factor in whether this player is facing the right dir. If sides, do bonus damage, if facing backwards do extra critical damage
         //TODO: factor in armor and blocking, etc
         heartMax -= strength;
+        heartPoints -= strength;
 	}
 
     public void Fatigue(float weaken){

@@ -15,6 +15,10 @@ public class Move : Action {
             float x = trans.localPosition.x;
             if (x< -lim || x > lim) trans.localPosition = oldPos;
         }
-        actor.GetComponent<Animator>().SetTrigger(actionName);
+        if(actor.facingRight) {
+            actor.GetComponent<Animator>().SetTrigger(actionName);
+        } else {
+            actor.GetComponent<Animator>().SetTrigger(invName);
+        }
     }
 }

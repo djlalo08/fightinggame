@@ -316,6 +316,7 @@ MonoBehaviour:
   actor: {fileID: 0}
   cost: 0
   actionName: flip
+  invName: 
 --- !u!114 &114278449887452308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,6 +350,7 @@ MonoBehaviour:
   actor: {fileID: 114629120171601166}
   cost: 3
   actionName: left
+  invName: 
   dir: -1
 --- !u!114 &114460312321020294
 MonoBehaviour:
@@ -364,6 +366,7 @@ MonoBehaviour:
   actor: {fileID: 114629120171601166}
   cost: 0
   actionName: nothing
+  invName: nothing
 --- !u!114 &114496291288270180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,6 +381,7 @@ MonoBehaviour:
   actor: {fileID: 114629120171601166}
   cost: 15
   actionName: punch
+  invName: punch
   strength: 15
   range: 0.88
   offset: 2.55
@@ -402,6 +406,7 @@ MonoBehaviour:
   - AA
   - SemicolonSemicolon
   - Q
+  - Q
   vals:
   - {fileID: 114460312321020294}
   - {fileID: 114337808716225900}
@@ -409,6 +414,7 @@ MonoBehaviour:
   - {fileID: 114805927475409850, guid: 14d771e0759e14df392d29ff509b2aba, type: 2}
   - {fileID: 114071091684526808, guid: c15bf4798eeb14e65b9efabfb402845e, type: 2}
   - {fileID: 114496291288270180}
+  - {fileID: 114015248388539248}
   isEnemy: 0
   isEnabled: 1
   enemy: {fileID: 0}
@@ -421,7 +427,7 @@ MonoBehaviour:
   heartPoints: 0
   position: 0
   updateCount: 0
-  facingLeft: 0
+  facingRight: 0
 --- !u!114 &114639397504997230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,6 +442,7 @@ MonoBehaviour:
   actor: {fileID: 0}
   cost: 3
   actionName: right
+  invName: 
   dir: 1
 --- !u!114 &114707163562922788
 MonoBehaviour:
@@ -451,6 +458,7 @@ MonoBehaviour:
   actor: {fileID: 114629120171601166}
   cost: 3
   actionName: bigright
+  invName: bigleft
   dir: 3
 --- !u!114 &114882554347632116
 MonoBehaviour:
@@ -466,6 +474,7 @@ MonoBehaviour:
   actor: {fileID: 114629120171601166}
   cost: 6
   actionName: bigleft
+  invName: bigright
   dir: -3
 --- !u!212 &212064775139904404
 SpriteRenderer:

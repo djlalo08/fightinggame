@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class GameLoop:MonoBehaviour {
+    //160bpm offset:.49
+    //pixelfighting3 offset: ~.135
 
     public float BPM;
 
@@ -66,8 +68,12 @@ public class GameLoop:MonoBehaviour {
         p2.Tire();
         p1.Regen();
         p2.Regen();
-        p1.Parse(p1queue).Act();
-        p2.Parse(p2queue).Act();
+        Action p1Action = p1.Parse(p1queue);
+        Action p2Action = p2.Parse(p2queue);
+        p1Action.Fatigue();
+        p2Action.Fatigue();
+        p1Action.Act();
+        p2Action.Act();
         p1queue = "";
         p2queue = "";
         p1.heartPoints = Mathf.Min(p1.heartMax, p1.heartPoints);

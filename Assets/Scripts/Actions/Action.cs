@@ -7,7 +7,6 @@ public abstract class Action : MonoBehaviour {
     public Player actor;
     public float cost;
     public string actionName;
-    public bool invert;
 
     public void Act(){
         actor.Fatigue(cost);

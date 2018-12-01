@@ -92,6 +92,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1741132746114354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4832455927614378}
+  - component: {fileID: 114891578412570148}
+  m_Layer: 0
+  m_Name: Flip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1757666840467952
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,8 +241,22 @@ Transform:
   - {fileID: 4993402449684392}
   - {fileID: 4307173312360996}
   - {fileID: 4322708267303836}
+  - {fileID: 4832455927614378}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4832455927614378
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741132746114354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.278816, y: -10.944418, z: 15.313068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4813997356145428}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4869869957982384
 Transform:
@@ -286,7 +316,6 @@ MonoBehaviour:
   actor: {fileID: 114348068086253482}
   cost: 0
   actionName: nothing
-  invert: 0
 --- !u!114 &114280748104554738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,7 +330,6 @@ MonoBehaviour:
   actor: {fileID: 114348068086253482}
   cost: 3
   actionName: left
-  invert: 0
   dir: -1
 --- !u!114 &114348068086253482
 MonoBehaviour:
@@ -331,6 +359,7 @@ MonoBehaviour:
   - {fileID: 114647578825142154}
   - {fileID: 114586110184186722}
   isEnemy: 1
+  isEnabled: 1
   enemy: {fileID: 0}
   rightArm: {fileID: 114575160437802512, guid: 18b3e133d3394462ba8b9d0a05da3681, type: 2}
   leftArm: {fileID: 114575160437802512, guid: 18b3e133d3394462ba8b9d0a05da3681, type: 2}
@@ -341,6 +370,7 @@ MonoBehaviour:
   heartPoints: 0
   position: 0
   updateCount: 0
+  facingLeft: 0
 --- !u!114 &114574566028511974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -355,7 +385,6 @@ MonoBehaviour:
   actor: {fileID: 0}
   cost: 3
   actionName: bigleft
-  invert: 0
   dir: -3
 --- !u!114 &114586110184186722
 MonoBehaviour:
@@ -371,7 +400,6 @@ MonoBehaviour:
   actor: {fileID: 114348068086253482}
   cost: 15
   actionName: punch
-  invert: 0
   strength: 15
   range: 0.88
   offset: 2.55
@@ -390,7 +418,6 @@ MonoBehaviour:
   actor: {fileID: 0}
   cost: 3
   actionName: bigright
-  invert: 0
   dir: 3
 --- !u!114 &114661092224880376
 MonoBehaviour:
@@ -406,8 +433,21 @@ MonoBehaviour:
   actor: {fileID: 114348068086253482}
   cost: 3
   actionName: right
-  invert: 0
-  dir: 0.1
+  dir: 1
+--- !u!114 &114891578412570148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741132746114354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec0cee04baf94bd0ac1d2255b76ac76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  cost: 0
+  actionName: flip
 --- !u!114 &114929359459058542
 MonoBehaviour:
   m_ObjectHideFlags: 1

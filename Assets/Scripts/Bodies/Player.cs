@@ -34,9 +34,11 @@ public class Player : MonoBehaviour {
 	bool regen;
 	public int updateCount;
 
+    public bool facingLeft;
+
 	// Use this for initialization
 	void Awake() {
-
+        facingLeft = true;
         updateCount = 0;
 
         heartMax = heart.MAX;

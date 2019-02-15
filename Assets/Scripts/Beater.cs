@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -56,6 +56,7 @@ public class Beater : MonoBehaviour {
         if (beatCount == 1){ GetComponent<Image>().color= Color.red;}
         frame = 1;
     }
+
 
     public void Increment() {
         beatCount = (beatCount >= 4) ? 1 : beatCount + 1;

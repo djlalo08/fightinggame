@@ -12,6 +12,7 @@ public class Beater : MonoBehaviour {
 
     private int frame;//0 steady, 1 start grow, 2 finish grow, -1 start shrink, -2 finish shrink
     private float size = 1;
+    private int x12131 = 0; 
 
     public Color c;
 

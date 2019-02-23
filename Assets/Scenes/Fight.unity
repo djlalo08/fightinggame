@@ -7491,7 +7491,7 @@ PrefabInstance:
     - target: {fileID: 114348068086253482, guid: 9256ba315e7a943d9866f7e18be94950,
         type: 3}
       propertyPath: isEnemy
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4813997356145428, guid: 9256ba315e7a943d9866f7e18be94950, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7529,6 +7529,16 @@ PrefabInstance:
         type: 3}
       propertyPath: invName
       value: punch
+      objectReference: {fileID: 0}
+    - target: {fileID: 212399163325297738, guid: 9256ba315e7a943d9866f7e18be94950,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212399163325297738, guid: 9256ba315e7a943d9866f7e18be94950,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9256ba315e7a943d9866f7e18be94950, type: 3}

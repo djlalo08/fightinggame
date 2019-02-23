@@ -17,6 +17,7 @@ public class Attack : Action {
         if (Mathf.Abs(actorPos-targPos+trueOffset) < range){
             target.Hit(strength);
             if (actor.facingRight) {
+                //Opens certain animator animations based on the call set by buttons
                 actor.GetComponent<Animator>().SetTrigger(actionName);
             }
             else {

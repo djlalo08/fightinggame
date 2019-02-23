@@ -14,7 +14,7 @@ public abstract class Action : MonoBehaviour {
     }
 
     public void Act(){
-        Effect(); //there is an expectation that effect should trigger actionNam animation
+        Effect(); //there is an expectation that effect should trigger actionName animation
     }
 
     protected abstract void Effect();

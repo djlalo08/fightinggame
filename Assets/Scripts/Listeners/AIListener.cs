@@ -8,28 +8,28 @@ public class AIListener : KeyListener{
 
 	//called by GameLoop
 	//RegistersCurrentKeyHits
-    override public string GetInput(){
+    override public string GetInput() { 
         if (!hasTyped){
             int x = (int)Mathf.Floor(Random.Range(1,8));
             string str = "";
             switch (x){
                 case 1:
-                    str = "A";
+                    str = "J";
                     break;
                 case 2:
-                    str = "Semicolon";
+                    str = "L";
                     break;
                 case 3:
-                    str = "Q";
+                    str = "P";
                     break;
                 case 4:
-                    str = "AA";
+                    str = "JJ";
                     break;
                 case 5:
-                    str = "SemicolonSemicolon";
+                    str = "LL";
                     break;
                 case 6:
-                    str = "B";
+                    str = "K";
                     break;
                 case 7:
                     str = "";

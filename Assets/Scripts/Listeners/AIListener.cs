@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AIListener : KeyListener{
 
-    public bool hasTyped; 
+    public bool hasTyped;
 
 	//called by GameLoop
 	//RegistersCurrentKeyHits
-    override public string GetInput() { 
+    override public string GetInput() {
         if (!hasTyped){
             int x = (int)Mathf.Floor(Random.Range(1,8));
             string str = "";

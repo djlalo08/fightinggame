@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Possibly deprecated????????????? seems to be no use.....
+
 //note that this class expects a player parameter:
 //this is with multiplayer in mind:
 //can use the same keylistener class, one instance for each player

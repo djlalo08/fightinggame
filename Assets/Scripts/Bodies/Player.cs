@@ -18,7 +18,6 @@ public class Player : MonoBehaviour {
     public bool isEnabled;
     public bool isFront;
 
-
 	public Player enemy;
     KeyListener listener;
 

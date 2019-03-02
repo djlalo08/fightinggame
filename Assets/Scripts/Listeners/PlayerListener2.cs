@@ -18,8 +18,8 @@ public class PlayerListener2 : KeyListener
 
             if (Input.GetKeyDown(kcode))
             {
-                int pos = Array.IndexOf(forbiddenKeys, kcode);
-                if (pos < 1)
+                int pos = Array.IndexOf(forbiddenKeys, Input.inputString);
+                if (pos == -1)
                 {
                     str += kcode;
                 }

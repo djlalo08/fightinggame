@@ -33,7 +33,7 @@ public class GameLoop:MonoBehaviour {
 
     private void Awake() {
         p1Listener = (p1.isEnemy) ? (KeyListener)gameObject.AddComponent(typeof(AIListener)) : (KeyListener)gameObject.AddComponent(typeof(PlayerListener));
-        p2Listener = (p2.isEnemy) ? (KeyListener)gameObject.AddComponent(typeof(AIListener)) : (KeyListener)gameObject.AddComponent(typeof(PlayerListener));
+        p2Listener = (p2.isEnemy) ? (KeyListener)gameObject.AddComponent(typeof(AIListener)) : (KeyListener)gameObject.AddComponent(typeof(PlayerListener2));
         p1.TieListener(p1Listener);
         p2.TieListener(p2Listener);
         p1Listener.isEnabled = p1.isEnabled;

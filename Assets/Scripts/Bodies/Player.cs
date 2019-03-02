@@ -90,6 +90,7 @@ public class Player : MonoBehaviour {
     public Action Parse(string str){
         int s = str.LastIndexOf("Space", StringComparison.CurrentCulture);
         if (s >= 0) str = str.Substring(s+5);
+
         t.text = str + " " + s.ToString();
 
         return !table.ContainsKey(str) ? table[""] : table[str];

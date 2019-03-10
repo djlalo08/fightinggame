@@ -28,7 +28,7 @@ public class Player : MonoBehaviour {
     public Heart heart;
 
     public float heartMax;
-    public float heartPoints; 
+    public float heartPoints;
 
     public float position;
 

@@ -17,9 +17,9 @@ public class PlayerListener : KeyListener {
         string str = "";
         foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
         {
-
             if (Input.GetKeyDown(kcode))
             {
+                //This makes sure that none of the second player's keys are contained in this character's movements, allowing both characters to move at the same time. 
                 if ( Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Comma) || Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.K)){
                      isKeyEnabled = false;
                 }
@@ -33,7 +33,7 @@ public class PlayerListener : KeyListener {
                 }
             }
         }
-        if (!isEnabled) return "";
+        if (!isKeyEnabled) return "";
         return str;
     }
 

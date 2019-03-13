@@ -25,6 +25,7 @@ public class PlayerListener2 : KeyListener
 
             if (Input.GetKeyDown(kcode))
             {
+                //Same as player one, restricts registered input to ensure that both players can move at the same time.
                 if ( Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.C)){
                      isKeyEnabled = false;
                 }

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 
     public Text t;
 
+
     public Dictionary<string, Action> table = new Dictionary<string, Action>();
     public List<string> keys = new List<string>();
     public List<Action> vals = new List<Action>();
@@ -102,5 +103,9 @@ public class Player : MonoBehaviour {
 
     public float Mass(){
         return rightArm.weight + leftArm.weight + rightLeg.weight + leftLeg.weight + heart.weight;
+    }
+
+    public String getActions(){
+        return t.text;
     }
 }

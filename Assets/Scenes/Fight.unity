@@ -1508,7 +1508,7 @@ Transform:
   - {fileID: 1806729732}
   - {fileID: 121782685}
   m_Father: {fileID: 1886867907}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &554856244
 GameObject:
@@ -4399,6 +4399,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114629120171601166, guid: 8c702db8cecc844f1ac5b35009822694,
         type: 3}
+      propertyPath: keys.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114629120171601166, guid: 8c702db8cecc844f1ac5b35009822694,
+        type: 3}
+      propertyPath: vals.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114629120171601166, guid: 8c702db8cecc844f1ac5b35009822694,
+        type: 3}
       propertyPath: t
       value: 
       objectReference: {fileID: 1587252341}
@@ -4432,6 +4442,16 @@ PrefabInstance:
       propertyPath: isFront
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114629120171601166, guid: 8c702db8cecc844f1ac5b35009822694,
+        type: 3}
+      propertyPath: keys.Array.data[7]
+      value: E
+      objectReference: {fileID: 0}
+    - target: {fileID: 114629120171601166, guid: 8c702db8cecc844f1ac5b35009822694,
+        type: 3}
+      propertyPath: vals.Array.data[7]
+      value: 
+      objectReference: {fileID: 2083936266}
     - target: {fileID: 4172429180369836, guid: 8c702db8cecc844f1ac5b35009822694, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9
@@ -7039,8 +7059,8 @@ Transform:
   - {fileID: 944505899}
   - {fileID: 2137466303}
   - {fileID: 1009180382}
-  - {fileID: 2038415100}
   - {fileID: 510972195}
+  - {fileID: 2038415100}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7583,7 +7603,7 @@ Transform:
   m_LocalScale: {x: 11.446261, y: 3.0294704, z: 10.819085}
   m_Children: []
   m_Father: {fileID: 1886867907}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2038415101
 BoxCollider:
@@ -7722,6 +7742,18 @@ Transform:
   m_Father: {fileID: 510972195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 31.889002, z: 0}
+--- !u!114 &2083936266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114496291288270180, guid: 8c702db8cecc844f1ac5b35009822694,
+    type: 3}
+  m_PrefabInstance: {fileID: 1284214317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6446800319f744949003f47066c01b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2101431623
 GameObject:
   m_ObjectHideFlags: 0
